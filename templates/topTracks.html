@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <nav class = "nav-wrapper grey lighten-3">
+            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
+            <div class = "container" >
+                <a onclick = "location.href = '/'" class="brand-logo black-text">Track Record</a>
+                
+            </div>
+        </nav>
+        <ul id="slide-out" class="sidenav red lighten-4">
+            <br>
+            <li><a onclick = "location.href = '/TopArtists'">Top Artists</a></li>
+            <li><a onclick = "location.href = '/TopTracks'">Top Tracks</a></li>
+        </ul>
+        
+        <div class = "container grey lighten-3">
+            <div class = "card blue lighten-2">
+                <div class = "card-content white-text center">
+                    <h3>Top Tracks</h3>
+                </div>
+                <div class = "card-tabs">
+                    <ul class = "tabs tabs-fixed-width tabs-transparent">
+                        <li class="tab"><a   href="#test4">Last Month</a></li>
+                        <li class="tab"><a  href="#test5">Last 6 Months</a></li>
+                        <li class="tab"><a  href="#test6">All Time</a></li>
+                    </ul>
+                </div>
+                <div class="card-content white-text blue lighten-3">
+                    <div id="test4">
+                        {% for item in info%}
+                        <p>{{item}}</p>
+                        <br>  
+                        {% endfor %}  
+                    </div>
+                    <div id="test5">
+                        {% for item in info2%}
+                        <p>{{item}}</p>
+                        <br>  
+                        {% endfor %}  
+                    </div>
+                    <div id="test6">
+                        {% for item in info3%}
+                        <p>{{item}}</p>
+                        <br>  
+                        {% endfor %}  
+                    </div>
+                </div>
+            </div>
+
+
+            
+
+
+        </div>
+        
+
+
+
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+        
+        <script>
+            var elem = document.querySelector('.sidenav');
+            var instance = new M.Sidenav(elem);            
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('.tabs').tabs();
+            });
+        </script>
+
+    </body>
+  </html>
